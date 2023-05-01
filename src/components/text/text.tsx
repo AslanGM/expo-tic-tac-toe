@@ -3,14 +3,22 @@ import { Text as NativeText, TextProps as NativeTextProps } from 'react-native'
 
 type TextProps = {
     weight: '400' | '700'
+    color: string
     children: ReactNode
 } & NativeTextProps
 
 const defaultProps = {
-    weight: '400'
+    weight: '400',
+    color: '#FAFF18'
 }
 
-export default function Text({ children, style, weight, ...props }: TextProps): ReactElement {
+export default function Text({
+    children,
+    style,
+    weight,
+    color,
+    ...props
+}: TextProps): ReactElement {
     let fontFamily
     if (weight === '400') {
         fontFamily = 'Inter_400Regular'
@@ -21,7 +29,7 @@ export default function Text({ children, style, weight, ...props }: TextProps): 
     return (
         <NativeText
             {...props}
-            style={[{ fontFamily }, style]}
+            style={[{ fontFamily, color }, style]}
         >
             {children}
         </NativeText>
