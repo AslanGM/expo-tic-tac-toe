@@ -1,5 +1,5 @@
-import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/inter'
 import AppLoading from 'expo-app-loading'
+import { useFonts } from 'expo-font'
 import { ReactElement, ReactNode } from 'react'
 
 type AppBootstrapProps = {
@@ -8,8 +8,8 @@ type AppBootstrapProps = {
 
 export default function AppBootstrap({ children }: AppBootstrapProps): ReactElement {
     const [fontsLoaded] = useFonts({
-        Inter_400Regular,
-        Inter_700Bold
+        'ppradiogro-bold': require('@assets/fonts/ppradiogro-bold.woff2'),
+        'ppradiogro-regular': require('@assets/fonts/ppradiogro-regular.woff2')
     })
     return fontsLoaded ? <>{children}</> : <AppLoading />
 }
