@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Game, Home } from '@screens'
+import { Home, SinglePlayerGame } from '@screens'
 import { ReactElement } from 'react'
 
 export type StackNavigatorParams = {
     Home: undefined
-    Game: undefined
+    SinglePlayerGame: undefined
 }
 
 const Stack = createStackNavigator<StackNavigatorParams>()
@@ -23,8 +23,8 @@ export default function Navigator(): ReactElement {
                     component={Home}
                 />
                 <Stack.Screen
-                    name="Game"
-                    component={Game}
+                    name="SinglePlayerGame"
+                    component={SinglePlayerGame}
                 />
             </Stack.Navigator>
         </NavigationContainer>
