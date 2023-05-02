@@ -1,7 +1,8 @@
+import { Background, Text } from '@components'
 import { StackNavigatorParams } from '@config/navigator'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { ReactElement } from 'react'
-import { Button, Text, View } from 'react-native'
+import { Button, ScrollView } from 'react-native'
 import styles from './home.styles'
 
 type HomeProps = {
@@ -10,14 +11,16 @@ type HomeProps = {
 
 export default function Home({ navigation }: HomeProps): ReactElement {
     return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-            <Button
-                title="Go to Game"
-                onPress={(): void => {
-                    navigation.navigate('Game')
-                }}
-            />
-        </View>
+        <Background>
+            <ScrollView contentContainerStyle={styles.container}>
+                <Text>Home</Text>
+                <Button
+                    title="Go to Game"
+                    onPress={(): void => {
+                        navigation.navigate('Game')
+                    }}
+                />
+            </ScrollView>
+        </Background>
     )
 }
