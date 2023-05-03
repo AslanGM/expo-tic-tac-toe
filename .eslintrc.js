@@ -26,7 +26,8 @@ module.exports = {
     "rules": {
         // suppress errors for missing 'import React' in files
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/explicit-function-return-type": "warn"
+        "@typescript-eslint/explicit-function-return-type": "warn",
+        "no-console": "warn",
     },
     "settings": {
         "react": {
