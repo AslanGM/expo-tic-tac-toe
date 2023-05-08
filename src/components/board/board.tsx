@@ -1,12 +1,14 @@
 import { Text } from '@components'
+import { BoardState } from '@utils'
 import { ReactElement } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 
 type Cell = 'x' | 'o' | null
 
 type BoardProps = {
-    state: [Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell]
+    state: BoardState
     size: number
+    disabled?: boolean
     onCellPressed?: (index: number) => void
 }
 
